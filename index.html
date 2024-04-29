@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Library</title>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav class="nav-header">
+				<ul class="links">
+					<li class="logo">LIBRARY</li>
+					<li class="login">
+						<button id="login-btn">Log In</button>
+					</li>
+				</ul>
+			</nav>
+			<div class="main">
+				<button id="add-btn">+ADD BOOK</button>
+			</div>
+			<div class="cards-container"></div>
+		</div>
+		<div class="modal" id="addBookModal">
+			<form class="add-book-form" id="addBookForm">
+				<h3>BOOK INFO</h3>
+				<input type="text" id="title" name="title" placeholder="Title" />
+				<input type="text" id="author" name="author" placeholder="Author" />
+				<input type="number" id="pages" name="pages" placeholder="Pages" />
+				<!-- <div class="is-read">
+					<label for="is-read">Have you read it?</label
+					><input type="checkbox" id="is-read" name="is-read" />
+				</div> -->
+				<button type="submit" id="btn-submit">Submit</button>
+			</form>
+		</div>
+		<div class="delete-modal" id="deleteBookModal">
+			<p>You sure you want to delete this Book?</p>
+		</div>
+		<div class="overlay"></div>
+	</body>
+	<script src="js/app.js"></script>
+</html>
