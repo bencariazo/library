@@ -37,3 +37,41 @@ function addBookToLibrary() {
 
 }
 
+const cardsContainer = document.querySelector('.cards-container')
+const addBtn = document.querySelector('#add-btn')
+const modal = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
+const btnSubmit = document.querySelector('#btn-submit')
+const title = document.querySelector('#title')
+const author = document.querySelector('#author')
+const pages = document.querySelector('#pages')
+const isRead = document.querySelector('#is-read')
+const login = document.querySelector('#login-btn')
+const form = document.querySelector('.add-book-form')
+const deleteModal = document.querySelector('.delete-modal')
+
+function addBookModal() {
+    overlay.classList.add('active')
+    modal.classList.add('active')
+}
+
+function closeModal() {
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+addBtn.addEventListener('click', addBookModal)
+overlay.addEventListener('click', closeModal)
+login.addEventListener('click', (e) => {
+    e.preventDefault()
+})
+
+btnSubmit.addEventListener('click', (e) => {
+    e.preventDefault()
+    const newBook = new Book(title.value, author.value, pages.value)
+    myLibrary.push(newBook)
+    addBookToLibrary();
+    closeModal()
+})
+
+addBookToLibrary();
